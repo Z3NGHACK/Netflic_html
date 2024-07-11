@@ -18,6 +18,7 @@ body, html {
     width: 250px;
     background-color: #111111;
     height: 100%;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5); /* Add a right shadow */
 }
 .hero_option .logo{
     width: 100%;
@@ -94,18 +95,23 @@ body, html {
 .hero_main {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 30px); /* Adjust for padding */
+    width: calc(100% - 30px);
     background-color: #131834;
     padding: 0 0 0 30px;
-    overflow-y: auto; /* Enable vertical scrolling */
-    height: 100vh; /* Full viewport height */
+    overflow-y: auto; 
+    height: 100vh; 
+}
+.hero_main::-webkit-scrollbar{
+    display: none;
 }
 
 .hero_main .header {
     display: flex;
     height: 80px;
-    width: 100%;
-    margin-bottom: 50px;
+    width: 85%;
+    position: absolute;
+    z-index: 1000;
+    background-color: #131834;
 }
 
 .hero_main .header .inp {
@@ -142,7 +148,7 @@ body, html {
     display: flex;
     width: 20%;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: end;
     padding-right: 20px;
 }
 
@@ -165,17 +171,20 @@ body, html {
     border-radius: 100%;
 }
 
+.hero_main .m{
+    margin-top: 100px;
+}
 .hero_main .movie {
     display: flex;
     flex-direction: column;
     color: #fff;
-    margin-bottom: 20px; /* Add margin for spacing between movie sections */
+    margin-bottom: 20px;
 }
 
 .hero_main .movie .movie_group {
     display: flex;
     gap: 2px;
-    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-x: auto; 
     white-space: nowrap;
 }
 
